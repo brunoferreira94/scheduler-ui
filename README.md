@@ -1,27 +1,58 @@
-# SchedulerUi
+# Sistema de Agendamento Front-end
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+Este é o repositório do front-end do Sistema de Agendamento, uma aplicação web construída em Angular 16.2.0 com Angular Material. O Sistema de Agendamento permite que os clientes agendem serviços, selecionando data, hora e serviços desejados.
 
-## Development server
+## Recursos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Listagem de agendamentos
+- Agendamento de serviços com seleção de data e hora
+- Escolha de serviços a serem agendados
+- Edição de agendamentos
+- Integração com o backend para armazenar dados de agendamento
 
-## Code scaffolding
+## Pré-requisitos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Node.js 16.14.2 (recomendo usar o [NVM](https://github.com/coreybutler/nvm-windows))
+- Angular CLI (`npm install -g @angular/cli`)
 
-## Build
+## Como Iniciar
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone este repositório:
 
-## Running unit tests
+   ```bash
+   git clone https://github.com/brunoferreira94/scheduler-ui.git
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Navegue até o diretório do projeto:
 
-## Running end-to-end tests
+   ```bash
+   cd sistema-de-agendamento-frontend
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Instale as dependências:
 
-## Further help
+   ```bash
+   npm install
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   npm start
+   ```
+
+1. Acesse o aplicativo em seu navegador em <http://localhost:4200>
+
+## Como Contribuir
+
+Se você deseja contribuir para este projeto, siga estas etapas:
+
+1. Faça um fork deste repositório.
+2. Crie uma branch para sua modificação: git checkout -b feature/1. sua-feature.
+3. Faça as alterações desejadas e faça commit delas: git commit -m 1. 'Adicionar nova funcionalidade'.
+4. Envie as alterações para a branch principal do seu fork: git push 1. origin feature/sua-feature.
+5. Abra uma solicitação pull neste repositório.
+
+- Autor: Bruno Ferreira
+- GitHub: [brunoferreira94](https://github.com/brunoferreira94/fis-api)
+- Email: [contatobrunofs@gmail.com](mailto:contatobrunofs@gmail.com)

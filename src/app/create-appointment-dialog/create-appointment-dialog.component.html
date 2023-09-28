@@ -1,0 +1,61 @@
+<h2>Novo Agendamento</h2>
+<mat-dialog-content [formGroup]="formGroup">
+  <mat-form-field>
+    <input
+      matInput
+      formControlName="scheduledDate"
+      placeholder="Data e Hora"
+      type="datetime-local"
+    />
+    <mat-error *ngIf="formGroup.get('scheduledDate')?.hasError('required')"
+      >Data e hora são obrigatórios</mat-error
+    >
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Selecione um Cliente</mat-label>
+    <mat-select formControlName="client" (selectionChange)="changeValidator()">
+      <mat-option value="new">Cadastrar Novo Cliente</mat-option>
+      <mat-option *ngFor="let client of clients" [value]="client.id">{{
+        client.name
+      }}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="formGroup.get('client')?.hasError('required')"
+      >Cliente é obrigatório</mat-error
+    >
+  </mat-form-field>
+
+  <div *ngIf="formGroup.get('client')?.value === 'new'">
+    <mat-form-field>
+      <input matInput formControlName="name" placeholder="Nome do Cliente" />
+      <mat-error *ngIf="formGroup.get('name')?.hasError('required')"
+        >Nome do Cliente é obrigatório</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="email" placeholder="E-mail do Cliente" />
+      <mat-error *ngIf="formGroup.get('email')?.hasError('required')"
+        >E-mail do Cliente é obrigatório</mat-error
+      >
+      <mat-error *ngIf="formGroup.get('email')?.hasError('email')"
+        >E-mail inválido</mat-error
+      >
+    </mat-form-field>
+  </div>
+
+  <mat-form-field>
+    <mat-label>Escolha um Serviço</mat-label>
+    <mat-select formControlName="services" multiple="true">
+      <mat-option *ngFor="let service of services" [value]="service.id">
+        {{ service.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancelClick()">Cancelar</button>
+  <button mat-button (click)="onSaveClick()" [disabled]="formGroup.invalid">
+    Salvar
+  </button>
+</mat-dialog-actions>
